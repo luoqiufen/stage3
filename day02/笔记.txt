@@ -89,7 +89,13 @@ github的使用
             origin 别名,指代添加远程关联时的地址
             master 推送的分支
 
-    4.HTTPS和SSH
+    4. 查看当前仓库有哪些远程关联
+        git remote
+
+    5. 删除已经存在的远程关联
+        git remote remove 关联名称
+
+    6.HTTPS和SSH
         HTTPS每次推送都需要输入用户名和密码
 
         SSH需要配置密钥,配置成功后推送就不需要用户名和密码了
@@ -100,4 +106,11 @@ github的使用
         ssh-keygen -t rsa -C "邮箱地址"
 
     配置密钥:
-        打开id_rsa.pub
+        打开id_rsa.pub复制其中的内容
+        点击github头像-->settings-->SSH And GPGKeys
+        -->Add SSH
+        -->Title随便写，将复制的内容粘贴进Key
+        -->Add SSH Key
+        注：本地的.ssh不能删除
+
+    视图界面工具的使用 GUI

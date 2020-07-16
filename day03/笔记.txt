@@ -1,0 +1,9 @@
+NodeJS
+    一、什么是nodejs
+        1.nodejs是一个JavaScript的运行环境(runtime environment)
+    
+    二、特点
+
+    三、适合做什么
+
+

@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-16 19:31:40
- * @LastEditTime: 2020-07-17 09:59:12
+ * @LastEditTime: 2020-07-17 10:39:07
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \2-coded:\web2004\stage3\day03\test_04.js
@@ -12,12 +12,9 @@ var url = require('url')
 var fs = require('fs')
 
 var server = http.createServer(function(req,res){
-    if(req.url=='/favicon.ico'){
-        return ;
-    }
-
     var info = ['apple','123456'];//用户名和密码
 
+    // 将字符串的地址转换为对象
     var urlStr = req.url;
     var urlObj = url.parse(urlStr,true);
 

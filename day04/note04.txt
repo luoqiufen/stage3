@@ -17,9 +17,22 @@ fs模块
         fs.mkdir(path,{},fn(err){})
 
     3.创建文件
-        fs.writeFile(path,data,{},fn(err){
+        fs.writeFile(path,data,{},fn(err){})
 
-        })
+    4.删除文件
+        fs.unlink()
+
+    5.读取文件夹内容
+        fs.readdir(path,fn(err,data){})
+
+        读取文件类型
+        fs.isFile()
+        检测文件的存在性
+        fs.stat(path,fn(err,states){})
+
+    6.删除文件夹
+        rmdir(path,fn(){})(只能删除空文件夹)
+
 
 
 练习: 

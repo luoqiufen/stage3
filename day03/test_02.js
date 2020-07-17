@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-16 17:26:42
- * @LastEditTime: 2020-07-16 18:55:44
+ * @LastEditTime: 2020-07-17 09:58:59
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \2-coded:\web2004\stage3\day03\test_02.js
@@ -11,11 +11,6 @@ var http = require('http');
 var fs = require('fs');
 
 var server = http.createServer(function(req,res){
-    if(req.url == '/favicon.io'){
-        return;
-    }
-    // var url = req.url.split('?')[0];
-
     if(req.url == '/circle'){
         fs.readFile('./test_02a.html',function(err,data){
             if(err){

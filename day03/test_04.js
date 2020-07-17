@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-16 19:31:40
- * @LastEditTime: 2020-07-16 20:31:19
+ * @LastEditTime: 2020-07-17 09:59:12
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \2-coded:\web2004\stage3\day03\test_04.js
@@ -44,8 +44,7 @@ var server = http.createServer(function(req,res){
             return;
         }
         res.end(data);
-    })
-   
+    })  
 
 })
 

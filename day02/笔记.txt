@@ -121,7 +121,7 @@ github的使用
             git clone 远程仓库地址
             该命令会将指定远程仓库完整的克隆下来,包括历史信息,而且还会自动添加远程关联
         3.git pull origin master   
-            讲远程仓库的master分支上的修改拉取下来
+            将远程仓库的master分支上的修改拉取下来
 
         一般情况下,第一次下载时使用git clone
         以后同步代码就只使用 git full 和 git push

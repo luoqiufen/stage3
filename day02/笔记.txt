@@ -125,3 +125,5 @@ github的使用
 
         一般情况下,第一次下载时使用git clone
         以后同步代码就只使用 git full 和 git push
+
+    

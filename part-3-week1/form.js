@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-18 09:48:43
- * @LastEditTime: 2020-07-18 11:33:49
+ * @LastEditTime: 2020-07-18 16:16:01
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \stage3\part-3-week1\form.js
@@ -13,6 +13,8 @@ var fs = require('fs');
 http.createServer(function (req, res) {
     var urlObj = url.parse(req.url, true);
     var path = urlObj.pathname;
+    
+    res.setHeader('content-type', 'text/html;charset=utf-8');
 
     /* if (path == "/favicon.ico") {
         return;
@@ -24,7 +26,7 @@ http.createServer(function (req, res) {
 
         // console.log(uname,mes);
 
-        fs.writeFile('users/'+uname+'.txt','\n'+mes,{ flag: "a" },function(err){
+        fs.writeFile('users/'+uname+'.txt',mes+'\n',{ flag: "a" },function(err){
             if(err){ 
                 console.log('文件创建失败');
                 return;
@@ -36,24 +38,24 @@ http.createServer(function (req, res) {
 
     if(path == '/show'){
         fs.readdir('users',function(err,files){
+            if(err){
+                res.end(err);
+                return;
+            }
             (function iterate(i){
                 if(i>=files.length){
                     return ;
                 }
-                console.log(files[i]);
-                fs.stat(files[i],function(err,stats){
-                    if(stats.isFile()){
-                        fs.readFile(files[i],'utf-8',function(err,data){
-                            if(err){
-                                console.log('读取内容出错');
-                                return;
-                            }
-                            res.end(files[i].name+'的内容:'+data);
-                        })
+                fs.readFile('users'+files[i],'utf-8',function(err,data){
+                    if(err){
+                        console.log('读取内容出错');
+                        return;
                     }
-                    i++
-                    iterate(i)
-                });
+                    res.end(files[i].name+'的内容:'+data);
+                })
+            
+            i++
+            iterate(i)
             })(0)
         })
     }
@@ -67,6 +69,6 @@ http.createServer(function (req, res) {
         return;
     })
 
-    res.setHeader('content-type', 'text/html;charset=utf-8');
+    
 
 }).listen(4000)

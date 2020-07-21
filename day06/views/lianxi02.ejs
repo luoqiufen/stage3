@@ -1,0 +1,26 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-21 17:46:56
+ * @LastEditTime: 2020-07-21 18:02:34
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \stage3\day06\views\lianxi02.ejs
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <% for(var i=0;i<pics.length;i++){ %>
+        <img src="<%= pics[i] %>" alt="">
+    <% } %>
+</body>
+</html>

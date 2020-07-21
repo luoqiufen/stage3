@@ -1,0 +1,27 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-21 16:58:29
+ * @LastEditTime: 2020-07-21 17:20:48
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \stage3\day06\views\static.ejs
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/index.css">
+    <script src="./script/index.js"></script>
+</head>
+<body>
+    <h1>这是一个页面</h1>
+    <p>
+        在js中设置了根目录后 <b>app.use(express.static('./public'))</b><br>
+        在ejs模板上引用静态资源文件时,如果使用的是相对路径,则相对的是 <b>./public</b><br>
+        使用绝对路径,则/表示的就是 <b>public</b>
+    </p>
+    <img src="./pic/8.jpg">
+</body>
+</html>

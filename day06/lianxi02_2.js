@@ -1,11 +1,12 @@
 /*
  * @Author: your name
- * @Date: 2020-07-21 10:10:10
- * @LastEditTime: 2020-07-21 19:48:15
+ * @Date: 2020-07-21 19:07:50
+ * @LastEditTime: 2020-07-21 20:08:42
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \stage3\day06\01.js
+ * @FilePath: \stage3\day06\lianxi02_2.js
  */ 
+
 const fd = require('formidable');
 const fs = require('fs');
 const http = require('http');
@@ -16,13 +17,6 @@ http.createServer(function (req, res) {
         const form = fd({ multiples: true });
         // 设置上传文件临时保存的路径
         form.uploadDir = './uploads'
-
-        /* 
-        form.parse() 解析请求对象,获取其中的数据
-        err: 错误信息,解析出错
-        fields: 解析得到的表单中的文本域的内容
-        files: 解析得到的表单中上传的文件(文件默认保存在C盘)
-        */
  
         form.parse(req, (err, fields, files) => {
             // console.log(files);
@@ -39,13 +33,11 @@ http.createServer(function (req, res) {
                 res.end('rename over');
             })
 
-            
         })
-        
         
     }
 
-    fs.readFile('./01.html', function (err, data) {
+    fs.readFile('./lianxi02.html', function (err, data) {
         if (err) {
             res.end('read file error');
             return;
@@ -53,3 +45,23 @@ http.createServer(function (req, res) {
         res.end(data);
     })
 }).listen(4000)
+
+/* var express = require('express');
+var app = express();
+
+app.listen(4000);
+
+// 设置视图模板引擎
+app.set('view engine','ejs');
+
+// 设置根目录
+app.use(express.static('./uploads'));
+
+// 处理 / 请求
+app.get('/pic',function(req,res){
+    // 获取uploads中的所有图片
+    var pics = fs.readdirSync('./uploads');
+    // 将pics传递给视图模板解析
+    res.render('lianxi02',{pics:pics});
+
+}) */

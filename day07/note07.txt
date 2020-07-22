@@ -1,0 +1,70 @@
+    3.路由功能
+
+    
+一、中间件 middleware
+    可以访问req、res对象的函数称为中间件
+    比如: 
+        app.get()   处理get请求
+        app.post()  处理post请求
+        app.use()   处理所有的请求
+    功能:
+        处理请求req和响应res对象
+        返回响应给浏览器,结束请求
+        调用下一个中间件(将请求放行,让后续中间件处理)
+
+    get和use的区别(01_get_use.js)
+        都能处理get请求
+        都忽略大小写,忽略参数,忽略锚点
+        不同点:
+            get是精确匹配
+                get('/a) 只能匹配 /a 的请求
+            use是模糊匹配
+                use('/a') 可以匹配所有以/a请求开头的请求
+                可以处理: /a , /a/b , /a/b/c/d
+                不可处理: /ab/b , /b/a
+            app.use('/',function(req,res){}) 可以处理所有的请求
+            简写成
+            app.use(function(req,res){})
+
+    end,send,render的区别
+        end: 
+            用于快速结束请求,返回响应,如果有返回的数据,可以作为参数传递回去
+            常用于测试,参数类型为 String 或者 buffer  
+            如果有中文,则会出现乱码,需要设置消息头
+        send: 
+            效果与end相似
+            常用于快速结束请求,返回响应
+            参数类型: string,buffer,array,json
+            如果数据有中文,会自动设置MIME类型,不会出现乱码情况
+        render:
+            渲染返回一个模板视图页面
+            一共3个参数:
+                视图名称,json数据,回调函数(err,html)
+            视图名称会自动从views文件夹中去查找
+            如果没有回调函数,则直接返回给浏览器
+            如果有浏览器,则将渲染成功的结果,赋值给html
+
+    请求参数的获取:
+        get请求: req.query
+        post请求: 有文件上传 formidable
+                  没有文件上传 app.use(express.urlencoded({ extended: true }))
+
+
+
+
+
+
+    /login ==>跳转到登录页面  ==>get
+    /login ==>发送登录请求  ==>post
+
+
+
+
+
+
+    路由对象 参数
+
+
+    photo
+        npm install -g cnpm --registry=https://registry.npm.taobao.org
+        cnpm i nodemon -g

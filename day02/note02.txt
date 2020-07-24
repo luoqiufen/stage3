@@ -120,6 +120,11 @@ github的使用
         2.git clone 命令
             git clone 远程仓库地址
             该命令会将指定远程仓库完整的克隆下来,包括历史信息,而且还会自动添加远程关联
+
+            git clone -b 分支名 远程仓库地址
+            克隆指定分支
+
+
         3.git pull origin master   
             将远程仓库的master分支上的修改拉取下来
 

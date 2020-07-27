@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-27 11:48:20
- * @LastEditTime: 2020-07-27 17:45:28
+ * @LastEditTime: 2020-07-27 20:21:50
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \photod:\web2004\stage3\day10\lianxi01.js
@@ -55,7 +55,7 @@ app.get('/', function (req, res) {
 
 // get的 /add请求,跳转到添加数据的页面
 app.get('/add', function (req, res) {
-    res.render('add.ejs');
+    res.render('add');
 })
 // post的 /add请求，接收页面传递的数据，将其保存进数据库
 app.post('/add', function (req, res) {

@@ -1,0 +1,42 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-27 19:19:42
+ * @LastEditTime: 2020-07-27 20:26:27
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \photod:\web2004\stage3\day10\views\login.ejs
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 引入css -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <!-- 低于IE9处理 -->
+    <!-- [if lt IE9] >
+    <script src="./boot/js/html5shiv.min.js"></script>
+    <script src="./boot/js/respond.min.js"></script>
+    < ![endif] -->
+</head>
+<body>
+    <form action="" method="POST">
+        <p>用户名: <input type="text" name="username"></p>
+        <p>密码: <input type="password" name="password"></p>
+        <input type="submit" value="登录">
+    </form>
+    <p><button type="button">注册</button></p>
+
+    <!-- 引入js -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script>
+        $('button').on('click',function(){
+            location.href = '/register'
+        }) 
+
+    </script>
+</body>
+</html>

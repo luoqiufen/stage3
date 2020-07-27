@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-24 17:10:33
- * @LastEditTime: 2020-07-27 09:06:36
+ * @LastEditTime: 2020-07-27 10:27:27
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \photod:\web2004\stage3\day09\testmongo.js
@@ -41,19 +41,40 @@ MongoClient.connect(url,opt,function(err,client){
     col.insertOne(doc1,function(err,docs){
         if(err){
             console.log(err);
+            client.close();
             return;
         }
         console.log(docs);
         client.close();
     }) */
 
-    // 删除数据
-    // col.deleteOne({})
+    // 删除数据 
+    /* col.deleteOne({name:'赵六'},function(err,docs){
+        if(err){
+            console.log(err);
+            client.close();
+            return;
+        }
+        console.log(docs);
+        client.close();
+    }) */
+
+    // 修改数据
+    col.updateOne({ name : '张三' }, { $set: { age : 33 } }, function(err, result){
+        if(err){
+            console.log(err);
+            client.close();
+            return;
+        }
+        console.log(result);
+        client.close();
+    })
 
     // 查询集合中的所有数据
     /* col.find().toArray(function(err,docs){
         if(err){
             console.log(err);
+            client.close();
             return;
         }
         console.log(docs);

@@ -21,6 +21,9 @@ MEVN全栈开发
 
     mongodd://localhost:27017
 
+
+    npm i mongodb
+
     安装成功后,需要配置环境变量
     右击我的电脑-->属性-->高级系统设置-->环境变量-->在用户变量或者系统变量中双击path-->在变量值中,奖光标移动到最后,添加英文状态下的分号,然后将安装的bin路径粘贴进去 C:\Program Files\MongoDB\Server\4.2\bin
 

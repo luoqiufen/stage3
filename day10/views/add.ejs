@@ -1,0 +1,39 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-27 15:20:19
+ * @LastEditTime: 2020-07-27 16:22:01
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \photod:\web2004\stage3\day10\views\add.ejs
+--> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 引入css -->
+    <link rel="stylesheet" href="./boot/css/bootstrap.css">
+    <!-- 低于IE9处理 -->
+    <!-- [if lt IE9] >
+    <script src="./boot/js/html5shiv.min.js"></script>
+    <script src="./boot/js/respond.min.js"></script>
+    < ![endif] -->
+</head>
+<body>
+    <form action="/add" method="POST">
+        <p>商品编号: <input type="text" name="pid"></p>
+        <p>商品名称: <input type="text" name="pname"></p>
+        <p>商品价格: <input type="text" name="price"></p>
+        <p>进货数量: <input type="text" name="count"></p>
+        <input type="submit" value="确定进货">
+    </form>
+
+
+    <!-- 引入js -->
+    <script src="./boot/js/jquery-1.9.1.min.js"></script>
+    <script src="./boot/js/bootstrap.js"></script>
+</body>
+</html>

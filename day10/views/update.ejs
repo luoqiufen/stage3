@@ -1,0 +1,39 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-27 16:04:22
+ * @LastEditTime: 2020-07-27 16:58:39
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \photod:\web2004\stage3\day10\views\update.ejs
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 引入css -->
+    <link rel="stylesheet" href="./boot/css/bootstrap.css">
+    <!-- 低于IE9处理 -->
+    <!-- [if lt IE9] >
+    <script src="./boot/js/html5shiv.min.js"></script>
+    <script src="./boot/js/respond.min.js"></script>
+    < ![endif] -->
+</head>
+<body>
+    <form action="/update" method="post">
+        <p><input type="hidden" name="id" value="<%= pro['_id'] %>"></p>
+        <p>商品编号:<%= pro['pid'] %></p>
+        <p>商品名称:<%= pro['pname'] %> </p>
+        <p>商品价格:<input type="text" name="price" value="<%= pro['price'] %>"> </p>
+        <p>商品数量:<input type="text" name="count" value="<%= pro['count'] %>"> </p>
+        <input type="submit" value="修改">
+    </form>
+    
+
+    <!-- 引入js -->
+    <script src="./boot/js/jquery-1.9.1.min.js"></script>
+    <script src="./boot/js/bootstrap.js"></script>
+</body>
+</html> 

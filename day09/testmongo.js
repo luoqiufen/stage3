@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-24 17:10:33
- * @LastEditTime: 2020-07-27 10:27:27
+ * @LastEditTime: 2020-07-27 14:50:46
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \photod:\web2004\stage3\day09\testmongo.js
@@ -71,7 +71,7 @@ MongoClient.connect(url,opt,function(err,client){
     })
 
     // 查询集合中的所有数据
-    /* col.find().toArray(function(err,docs){
+    /* col.find({}).toArray(function(err,docs){
         if(err){
             console.log(err);
             client.close();

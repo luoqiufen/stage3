@@ -1,0 +1,52 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-27 11:48:37
+ * @LastEditTime: 2020-07-27 17:19:38
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \photod:\web2004\stage3\day10\views\lianxi01.ejs
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 引入css -->
+    <link rel="stylesheet" href="./boot/css/bootstrap.css">
+    <!-- 低于IE9处理 -->
+    <!-- [if lt IE9] >
+    <script src="./boot/js/html5shiv.min.js"></script>
+    <script src="./boot/js/respond.min.js"></script>
+    < ![endif] -->
+</head>
+<body>
+    <table border="1" width="500" cellspacing="0" bordercolor="purple">
+        <caption><h1>商品展示</h1></caption>
+        <tr height="50">
+            <th>产品编号</th>
+            <th>产品名称</th>
+            <th>单价</th>
+            <th>库存</th>
+            <th>操作</th>
+        </tr>
+        <% for(var i=0;i<pros.length;i++){ %>
+        <tr align="center" height="40">
+            <td><%= pros[i]['pid'] %></td>
+            <td><%= pros[i]['pname'] %></td>
+            <td><%= pros[i]['price'] %></td>
+            <td><%= pros[i]['count'] %></td>
+            <td><a href="/update?id=<%= pros[i]._id %>">更新</a>&nbsp;<a href="/delete/<%= pros[i]._id %>">下架</a></td>
+        </tr>
+        <% } %>
+    </table>
+    <br>
+    <a href="/add">进货</a>
+
+    
+    <!-- 引入js -->
+    <script src="./boot/js/jquery-1.9.1.min.js"></script>
+    <script src="./boot/js/bootstrap.js"></script>
+</body>
+</html>

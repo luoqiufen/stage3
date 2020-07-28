@@ -1,5 +1,5 @@
 mongoose工具的使用
-    npm i mongoosenpm
+    npm i mongoose
     http://mongoosejs.net/
     https://mongoosejs.com/
 

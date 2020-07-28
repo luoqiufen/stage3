@@ -124,6 +124,11 @@ github的使用
             git clone -b 分支名 远程仓库地址
             克隆指定分支
 
+            clone 所有分支：
+            　  · git clone 仓库地址   
+                · git branch -r / git branch -a
+                · git checkout 分支名
+
 
         3.git pull origin master   
             将远程仓库的master分支上的修改拉取下来

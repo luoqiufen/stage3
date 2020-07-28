@@ -1,0 +1,50 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-07-28 14:51:36
+ * @LastEditTime: 2020-07-28 16:20:23
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \photod:\web2004\stage3\day11\views\show.ejs
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>新增员工</h1>
+    <form action="/add" method="post">
+        <p>员工姓名: <input type="text" name="ename"></p>
+        <p>员工年龄: <input type="text" name="age"></p>
+        <p>入职岗位: <select name="position">
+            <option value="web开发">web开发</option>
+            <option value="后端开发">后端开发</option>
+            <option value="UI设计">UI设计</option>
+        </select>
+        <input type="submit" value="添加">
+    </form>
+    <hr>
+    <h1>员工列表</h1>
+    <% if(state==1){ %>
+        <h1><%= errMsg %></h1>
+    <% }else{ %>
+        <table border="1" cellspacing="0" width="350">
+            <tr height="35">
+                <th>工号</th>
+                <th>姓名</th>
+                <th>职位</th>
+            </tr>
+            <% for(var i=0;i<docs.length;i++){ %>
+                <tr height="30" align="center">
+                    <td><%= docs[i].id %></td>
+                    <td><%= docs[i].name %></td>
+                    <td><%= docs[i].position==1?'web开发':docs[i].position==2?'后端开发':'UI设计' %></td>
+                </tr>
+            <% } %>
+        </table>
+    <% } %>
+
+</body>
+</html>

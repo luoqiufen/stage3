@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-27 11:48:20
- * @LastEditTime: 2020-07-27 20:21:50
+ * @LastEditTime: 2020-07-28 16:46:23
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \photod:\web2004\stage3\day10\lianxi01.js
@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
 var url = 'mongodb://localhost:27017';
-var opt = { useUnifiedTopology: true }
+var opt = { useUnifiedTopology: true };
 
 app.get('/', function (req, res) {
     // 连接数据库

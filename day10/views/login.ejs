@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-27 19:19:42
- * @LastEditTime: 2020-07-27 20:26:27
+ * @LastEditTime: 2020-07-28 10:28:46
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \photod:\web2004\stage3\day10\views\login.ejs
@@ -22,21 +22,16 @@
     < ![endif] -->
 </head>
 <body>
-    <form action="" method="POST">
+    <form action="/login" method="POST">
         <p>用户名: <input type="text" name="username"></p>
         <p>密码: <input type="password" name="password"></p>
         <input type="submit" value="登录">
+        <a href="/register">没有账号? 点击注册</a>
     </form>
-    <p><button type="button">注册</button></p>
 
     <!-- 引入js -->
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.js"></script>
-    <script>
-        $('button').on('click',function(){
-            location.href = '/register'
-        }) 
-
-    </script>
+    
 </body>
 </html>

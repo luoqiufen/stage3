@@ -1,0 +1,7 @@
+mongoose工具的使用
+    npm i mongoosenpm
+    http://mongoosejs.net/
+    https://mongoosejs.com/
+
+    const mongoose = require('mongoose');
+    mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true});

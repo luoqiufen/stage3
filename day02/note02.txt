@@ -134,6 +134,6 @@ github的使用
             将远程仓库的master分支上的修改拉取下来
 
         一般情况下,第一次下载时使用git clone
-        以后同步代码就只使用 git full 和 git push
+        以后同步代码就只使用 git pull 和 git push
 
     

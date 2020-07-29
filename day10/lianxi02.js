@@ -1,11 +1,3 @@
-/*
- * @Author: your name
- * @Date: 2020-07-27 18:54:22
- * @LastEditTime: 2020-07-28 10:31:56
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \photod:\web2004\stage3\day10\lianxi02.js
- */ 
 
 var express = require('express');
 var MongoClient = require('mongodb').MongoClient;

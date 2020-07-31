@@ -11,6 +11,7 @@
         6) cookie可以保存的数据很少(4k)
         7) 用户可以删除或修改或禁用cookie
 
+        中间件:
         npm i cookie-parser
 
 
@@ -35,7 +36,9 @@
           
 
     2.sesssion机制
+        为了解决cookie不安全以及不能大量存储数据的问题
+        ** session的设置与获取全都是由request完成的
 
-    db.users.insert({username:'虹猫',password:'a123'});
-    db.users.insert({username:'蓝兔',password:'b123'});
-    db.users.insert({username:'猪猪侠',password:'c123'});
+        中间件:
+        npm install express-session
+    

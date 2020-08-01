@@ -32,7 +32,7 @@ var User = mongoose.model('user', userSchema);
 var url = 'mongodb://localhost:27017/web';
 var opt = { useUnifiedTopology: true, useNewUrlParser: true };
 
-mongoose.connect(url, opt)
+mongoose.connect(url, opt);
 
 // 连接成功后CRUD
 // 4.查询数据

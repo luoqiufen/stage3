@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>用户注册</h1>
+    <form action="/tijiao" method="post" onsubmit="return canSubmit()">
+        <p>用户名: <input type="text" name="uname" onblur="checkName(this)" onfocus="f()"><span id="info1"></span></p>
+        <p>密码: <input type="password" name="pwd" onblur="checkPwd(this)"><span id="info2"></span></p>
+        <p>确认密码: <input type="password" id="confirmPwd"><span id="info3"></span></p>
+        <input type="submit">
+
+    </form>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        var canUse = false;//用户名是否可以使用
+        var canPwdUse = false;//密码是否可以使用
+
+        // 用户名文本框获取焦点事件
+        function f() {
+            $('#info1').html('');
+        }
+
+        // 用户名文本框失去焦点事件
+        function checkName(i) {
+            var uname = $(i).val().trim();
+            if (uname == '') {
+                $('#info1').html(' 用户名不能为空').css({ 'color': 'red' });
+                canUse = false;
+                return;
+            }
+            if (!/^[a-zA-Z]*[a-zA-Z0-9_]?$/.test(uname)) {
+                $('#info1').html(' 用户名不能使用').css({ 'color': 'red' });
+                canUse = false;
+                return;
+            }
+            if (uname.length < 6 || uname.length > 15) {
+                $('#info1').html(' 用户名必须为6-15位').css({ 'color': 'red' });
+                canUse = false;
+                return;
+            }
+            
+            $.ajax({
+                url: '/check',
+                data: { uname: uname },
+                method: 'post',
+                success: function (result) {
+                    if(result.status==0){
+                        canUse = true;
+                    }else{
+                        canUse=false;
+                    }
+                }
+            })
+        }
+
+        // 检查密码
+        function checkPwd(i){
+            var pwd = $(i).val().trim();
+            if(pwd==''){
+                $('#info2').html(' 密码不能为空').css({ 'color': 'red' });;
+                canPwdUse = false;
+                return;
+            }
+            if(pwd.length<6){
+                $('#info2').html(' 密码不能低于6位').css({ 'color': 'red' });;
+                canPwdUse = false;
+                return;
+            }
+            $('#info2').html('');
+            canPwdUse = true;
+        }
+
+        // 能否发送请求
+        function canSubmit(){
+            return canUse&&canPwdUse;
+        }
+
+
+    </script>
+</body>
+
+</html>

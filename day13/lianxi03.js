@@ -31,6 +31,6 @@ app.get('login',function(req,res){
         return;
     }
     // 登录成功
-    session.username = username;
+    req.session.username = username;
     res.send('登录成功');
 })

@@ -3,8 +3,8 @@
 // 1.定义一个方法,根据传入的参数,计算得出参数的总和(使用扩展运算符)
 {
     let sum = (...arr) => {
-        var sum = 0;
-        for (var i = 0; i < arr.length; i++) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
             sum += arr[i];
         }
         return sum;

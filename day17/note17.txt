@@ -1,0 +1,69 @@
+1. Promise对象(01_promise.js)
+    ES6 为异步变成提供的一个统一的解决方案
+    使用同步的方式来处理异步的操作
+
+    Promise 的3种状态
+        1. pending: 等待状态,在异步操作完成之前的状态
+            操作的结果有可能成功,也可能失败
+            如果成功,则状态转换为 fulfilled
+            如果失败,则状态转换为 rejected
+            状态的转换不可更改,一旦状态改变,则无法更改
+        2. fulfilled: 异步操作成功,也称之为resolve
+        3. rejected: 操作失败
+
+        fulfilled 和 rejected 相互之间不能转换
+
+    catch方法
+    finally方法
+
+    promiseImpl.all()
+        将多个promise对象封装成一个新的promise对象
+        只有当所有promise对象的状态都变成fulfilled时
+        新的promise对象才会变成fulfilled状态
+        只要有一个是rejected状态，新的promise对象就是rejected
+
+    Promise.race()
+        参数和all方法一样,是一个promise实例数组
+        返回值也是一个新的promise对象
+        当参数中的promise有一个状态变为fufilled
+        新的promise对象的状态就会变成fufilled,剩下的忽略
+
+    Promise.allSettled()
+
+2. Symbol
+    javascript的第七种基本数据类型,表示独一无二的值
+
+3. 模块化
+    export 导出模块
+    import 引入模块
+    
+4. babel
+    babel是一个js的编译器,可以讲ES6风格的代码编译成ES5语法,用于解决低版本浏览器不兼容ES6的情况
+
+    1) 安装babel
+        npm i babel-preset-env
+        npm i babel-cli -g
+
+    2) 配置文件
+        在根目录day17下新建.babelrc
+
+    3) 在day17下新建两个文件夹 ES5,ES6
+        并在ES6文件夹中写ES6代码
+
+    4) 在day17下执行命令
+        babel ES6 -d ES5
+        将ES6下面所有的js代码全部转换为ES5代码并保存在ES5文件夹里面
+
+
+npm i got
+npm i superagent
+
+    
+补充：
+    对象的简写方式
+        let name = "jim"
+        let obj = {
+        name,
+        say: function(){},
+        say1(){} // ==>  say1: function(){}
+        }

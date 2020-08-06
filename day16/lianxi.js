@@ -2,14 +2,14 @@
 // 练习:
 // 1.定义一个方法,根据传入的参数,计算得出参数的总和(使用扩展运算符)
 {
-    let sum = (...arr) => {
+    let getSum = (...arr) => {
         let sum = 0;
         for (let i = 0; i < arr.length; i++) {
             sum += arr[i];
         }
         return sum;
     }
-    console.log(sum(1, 2, 3, 4, 5, 6));
+    console.log(getSum(1, 2, 3, 4, 5, 6));
 }
 
 // 2.解构下面的数据
@@ -47,6 +47,8 @@
             td <%= age %> 
 */
 {
+    let name = 'apple';
+    let age = 10;
     let str = `
     <table>
         <tr>
@@ -54,8 +56,8 @@
             <td>年龄</td>
         </tr>
         <tr>
-            <td><%= name %></td>
-            <td><%= age %></td>
+            <td><%= ${name} %></td>
+            <td><%= ${age} %></td>
         </tr>
     </table>`;
     console.log(str);

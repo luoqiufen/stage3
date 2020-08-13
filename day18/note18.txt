@@ -47,3 +47,6 @@ flappy-bird
                 |--DownPipe.js 下边的水管
 
 
+
+
+npm i websocket

@@ -1,12 +1,4 @@
-<!--
- * @Author: your name
- * @Date: 2020-07-14 10:16:41
- * @LastEditTime: 2020-07-15 09:07:13
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit 
- * @FilePath: \2-coded:\web2004\stage3\day01\笔记.html
---> 
-版本控制管理高级
+ 版本控制管理高级
     集中式
         CVS SVN
     分布式
